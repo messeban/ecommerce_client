@@ -1,0 +1,9 @@
+.product{
+    display: grid;
+    place-items: center;
+    background-color: aquamarine;
+    border-radius: 25px;
+    padding: 20px;
+    width: 300px;
+    height: 50vh;
+}

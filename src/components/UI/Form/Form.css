@@ -1,0 +1,19 @@
+form{
+    display: grid;
+    place-items: center;
+    background-color: rgba(17,52,166,0.75);
+    border-radius: 25px;
+    padding: 20px;
+    min-width: 25vw;
+}
+
+input{
+    margin: 10px 0px;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+input[type=text], input[type=email], input[type=password]{
+    width: 75%;
+    text-align: center;
+}

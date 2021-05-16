@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from './components/UI/Container/Container';
+import Form from './components/UI/Form/Form';
+import InputForm from './components/UI/InputForm/InputForm';
 
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
+import Products from './pages/Products/Products';
+import Navbar from "./components/Navbar/Navbar";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+import {useState} from 'react';
 function App() {
+  const [test, setTest] = useState('');
+  const handleSubmit = (evt)=> {
+    evt.preventDefault();
+    alert('A name was submitted: ' + test);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact={true} path="/login" component={Login} />
+          <Route exact={true} path="/signup" component={SignUp} />
+          <Route exact={true} path="/products" component={Products} />
+        </Switch>
+      </Router>
     </div>
   );
 }
