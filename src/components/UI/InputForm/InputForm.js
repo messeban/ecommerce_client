@@ -5,7 +5,6 @@ function InputForm(props) {
     <>
         <label>{props.nameText}</label>
         <input type={props.type} name={props.name} value={props.value} onChange={e => props.setInput(e.target.value)}/>
-
     </>
     )
 }

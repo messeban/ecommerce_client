@@ -69,10 +69,7 @@ function Navbar(props) {
                             <Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Login</Link>
                         </li>}
-                        {logged && <li>
-                            <Link to='/outlets' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                Outlets</Link>
-                        </li>}
+                    
                         {logged && <li>
                             <Link to='/logout' className='nav-links-mobile' onClick={() => {
                                 handleLogout();
@@ -84,10 +81,7 @@ function Navbar(props) {
 
                     {(button) && (!logged) &&  <Link to="/signup"><Button buttonStyle='btn--outline'>SIGN UP</Button></Link>}
                     {(button) && (!logged) && <Link to="/login"><Button buttonStyle='btn--outline' buttonSize='btn--medium--green'>LOGIN</Button></Link>}
-                    {(button) && (logged) &&  <Link to="/outlets"><Button buttonStyle='btn--outline'>OUTLETS</Button></Link>}
                     {(button) && (logged) &&  <Link to="/logout"><Button buttonStyle='btn--outline' buttonSize='btn--medium--red' onClick={handleLogout}>LOGOUT</Button></Link>}
-
-
                 </div>
             </nav>
         </>
