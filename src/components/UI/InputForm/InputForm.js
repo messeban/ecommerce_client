@@ -4,7 +4,7 @@ function InputForm(props) {
     return (
     <>
         <label>{props.nameText}</label>
-        <input type={props.type} name={props.name} value={props.value} onChange={e => props.setInput(e.target.value)}/>
+        <input type={props.type}  step={props.step} name={props.name} value={props.value} onChange={e => props.setInput(e.target.value)}/>
     </>
     )
 }

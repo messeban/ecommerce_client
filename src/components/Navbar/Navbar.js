@@ -11,6 +11,9 @@ function Navbar(props) {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
     const [logged, setLogged] = useState(localStorage.getItem("LoggedIn"));
+    const [role, setRole] = useState(localStorage.getItem("role"));
+
+    
     const showButton = () => {
         if (window.innerWidth <= 960) {
             setButton(false);
@@ -46,8 +49,7 @@ function Navbar(props) {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        <i className='fas fa-leaf' />
-                            WEBSHOP VIVES
+                    <i class="fas fa-store"></i>                            WEBSHOP VIVES
                             </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -61,6 +63,10 @@ function Navbar(props) {
                             <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
                                 Products</Link>
                         </li>
+                        {(role=="User")&&(logged) && <li>
+                            <Link to='/products/add' className='nav-links-mobile' onClick={closeMobileMenu} >
+                                Add Product</Link>
+                        </li>}
                         {!logged && <li>
                             <Link to='/signUp' className='nav-links-mobile' onClick={closeMobileMenu} >
                                 Sign Up</Link>
@@ -81,6 +87,7 @@ function Navbar(props) {
 
                     {(button) && (!logged) &&  <Link to="/signup"><Button buttonStyle='btn--outline'>SIGN UP</Button></Link>}
                     {(button) && (!logged) && <Link to="/login"><Button buttonStyle='btn--outline' buttonSize='btn--medium--green'>LOGIN</Button></Link>}
+                    {(role=="Admin")&&(button) && (logged) &&  <Link to="/products/add"><Button buttonStyle='btn--outline' buttonSize='btn--medium--red'>Add Product</Button></Link>}
                     {(button) && (logged) &&  <Link to="/logout"><Button buttonStyle='btn--outline' buttonSize='btn--medium--red' onClick={handleLogout}>LOGOUT</Button></Link>}
                 </div>
             </nav>
