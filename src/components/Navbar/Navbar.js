@@ -49,19 +49,21 @@ function Navbar(props) {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                    <i class="fas fa-store"></i>                            WEBSHOP VIVES
+                    <i className="fas fa-store"></i>                            WEBSHOP VIVES
                             </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Home </Link>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link>
+                        </li>
+
+                        <li className='nav-item'>
+                            <Link to='/products' className='nav-links' onClick={closeMobileMenu}>Products</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
-                                Products</Link>
+                            <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>Cart</Link>
                         </li>
                         {(role=="User")&&(logged) && <li>
                             <Link to='/products/add' className='nav-links-mobile' onClick={closeMobileMenu} >

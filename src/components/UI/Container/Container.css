@@ -2,6 +2,6 @@
     display: grid;
     place-items: center;
     width: 100%;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     background-image: url('../../../images/hotel-wallpaper.png');
 }
